@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.div`
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 25px;
+  box-shadow: 0 3px 6px #555;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <Header>Recipe </Header>
+    </Container>
   );
 }
 
