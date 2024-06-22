@@ -35,23 +35,35 @@ export const Ingredients = styled.span`
   border: 2px solid green;
   padding: 8px 0;
   text-align: center;
-  color: rgba(0, 255, 0, 1);
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  color: darkgreen;
   border-radius: 5px;
   &:hover {
-    color: darkgreen;
     transition: 0.2s ease-in-out;
+    color: rgba(0, 255, 0, 1);
     border: 2px solid darkgreen;
   }
 `;
 export const SeeMore = styled(Ingredients)`
   border: 2px solid red;
-  color: rgba(255, 0, 0, 1);
   transition: 0.2s ease-in-out;
+  color: darkred;
   &:hover {
     transition: 0.2s ease-in-out;
     border: 2px solid darkred;
-    color: darkred;
+    color: rgba(255, 0, 0, 1);
   }
 `;
+
+export const RecipeComponent = (props) => {
+  const { recipeObj } = props;
+  return (
+    <RecipeContainer>
+      <CoverImage src={recipeObj.image}></CoverImage>
+      <RecipeName>{recipeObj.label}</RecipeName>
+      <Ingredients>Ingredients</Ingredients>
+      <SeeMore onClick={()=> window.open(recipeObj.url)}>See Full Recipe</SeeMore>
+    </RecipeContainer>
+  );
+};
